@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login · GJIMT MBA AI LMS</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .login-wrapper {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .login-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .program-tag {
+      display: inline-block;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #15803d;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border-radius: 20px;
+      padding: 3px 10px;
+      margin-bottom: 10px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .login-header h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .login-header .subtitle {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .divider {
+      height: 1px;
+      background: #e2e8f0;
+      margin: 20px 0;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      color: #0f172a;
+      background: #f8fafc;
+      transition: border 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+      background: #fff;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-login:hover { background: #1d4ed8; }
+    .btn-login:active { transform: scale(0.99); }
+    .btn-login:disabled {
+      background: #93c5fd;
+      cursor: not-allowed;
+    }
+
+    .error-box {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.83rem;
+      color: #dc2626;
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .error-box.show { display: block; }
+
+    .info-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.78rem;
+      color: #1e40af;
+      margin-top: 16px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 0.72rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    .spinner-sm {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .already-logged {
+      display: none;
+      text-align: center;
+      padding: 24px 0 8px;
+      color: #475569;
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-wrapper">
+  <div class="login-card">
+
+    <div class="login-header">
+      <div style="
+        width: 72px;
+        height: 72px;
+        background: linear-gradient(135deg, #1e3a5f, #2563eb);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -1px;
+      ">GJ</div>
+
+      <div class="program-tag">MBA with AI Integration · 2026</div>
+      <h1>GJIMT MBA AI LMS</h1>
+      <p class="subtitle">
+        Gian Jyoti Institute of Management &amp; Technology<br/>
+        Semester 1 · Shadow Projects + GSDC Certification
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="alreadyLogged" class="already-logged">
+      <div class="spinner-sm" style="border-top-color:#2563eb;border-color:rgba(37,99,235,0.2);"></div>
+      You are already logged in. Redirecting...
+    </div>
+
+    <form id="loginForm" autocomplete="on">
+      <div class="form-group">
+        <label for="email">Institutional Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="s01@gjimt.ac.in"
+          required
+          autocomplete="username"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+          autocomplete="current-password"
+        />
+      </div>
+
+      <button type="submit" class="btn-login" id="loginBtn">
+        Sign In to LMS
+      </button>
+
+      <div class="error-box" id="errorBox"></div>
+
+      <div class="info-box">
+        Use your institutional email provided by faculty.<br/>
+        Students see only their own progress.<br/>
+        Faculty see the full batch dashboard.
+      </div>
+    </form>
+
+  </div>
+
+  <div class="login-footer">
+    GJIMT · MBA with AI Integration · Semester 1 · August–November 2026<br/>
+    Powered by Firebase Authentication
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+
+<script>
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  function redirectByRole(role) {
+    if (role === "faculty") {
+      window.location.replace("dashboard-faculty.html");
+    } else {
+      window.location.replace("dashboard-student.html");
+    }
+  }
+
+  async function loadProfileAndRedirect(user) {
+    try {
+      console.log("Fetching user profile...");
+
+      const snap = await db.collection("users").doc(user.uid).get();
+
+      if (!snap.exists) {
+        console.log("❌ No Firestore user → logout");
+        await auth.signOut();
+        return;
+      }
+
+      const data = snap.data();
+      const role = (data.role || "").toLowerCase();
+
+      console.log("✅ Role:", role);
+
+      redirectByRole(role);
+
+    } catch (err) {
+      console.error("🔥 Error:", err);
+      await auth.signOut();
+    }
+  }
+
+  // ✅ FIXED: this was missing earlier
+ auth.onAuthStateChanged(async (user) => {
+  if (user) {
+    console.log("✅ Already logged in");
+
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("alreadyLogged").style.display = "block";
+
+    // 🔥 ADD THIS (missing in your code)
+    await loadProfileAndRedirect(user);
+  }
+});
+
+  // LOGIN HANDLER
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const btn = document.getElementById("loginBtn");
+    const errBox = document.getElementById("errorBox");
+
+    errBox.classList.remove("show");
+    errBox.textContent = "";
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-sm"></span>Signing in...';
+
+    try {
+      console.log("Trying login...");
+
+      const result = await auth.signInWithEmailAndPassword(email, password);
+
+      console.log("✅ Login success:", result.user.uid);
+
+      await loadProfileAndRedirect(result.user);
+
+    } catch (err) {
+      console.error(err);
+
+      btn.disabled = false;
+      btn.innerHTML = "Sign In to LMS";
+      errBox.classList.add("show");
+
+      errBox.textContent = "Login failed. Check email/password.";
+    }
+  });
+</script>
+
+</body>
+</html>

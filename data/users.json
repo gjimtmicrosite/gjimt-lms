@@ -1,0 +1,14 @@
+[
+  { "userId": "MBAAI2026-S01", "displayName": "Student 01", "email": "s01@gjimt.ac.in", "role": "student" },
+  { "userId": "MBAAI2026-S02", "displayName": "Student 02", "email": "s02@gjimt.ac.in", "role": "student" },
+  { "userId": "MBAAI2026-S03", "displayName": "Student 03", "email": "s03@gjimt.ac.in", "role": "student" },
+  { "userId": "MBAAI2026-S04", "displayName": "Student 04", "email": "s04@gjimt.ac.in", "role": "student" },
+  { "userId": "MBAAI2026-S05", "displayName": "Student 05", "email": "s05@gjimt.ac.in", "role": "student" },
+  { "userId": "MBAAI2026-S06", "displayName": "Student 06", "email": "s06@gjimt.ac.in", "role": "student" },
+  { "userId": "MBAAI2026-S07", "displayName": "Student 07", "email": "s07@gjimt.ac.in", "role": "student" },
+  { "userId": "MBAAI2026-S08", "displayName": "Student 08", "email": "s08@gjimt.ac.in", "role": "student" },
+  { "userId": "MBAAI2026-S09", "displayName": "Student 09", "email": "s09@gjimt.ac.in", "role": "student" },
+  { "userId": "MBAAI2026-S10", "displayName": "Student 10", "email": "s10@gjimt.ac.in", "role": "student" },
+  { "userId": "MBAAI2026-F01", "displayName": "Tarun", "email": "tarun@gjimt.ac.in", "role": "faculty" },
+  { "userId": "MBAAI2026-F02", "displayName": "Gurdeepak Singh", "email": "gurdeepak@gjimt.ac.in", "role": "faculty" }
+]

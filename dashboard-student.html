@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>My Dashboard · GJIMT MBA AI LMS</title>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/dashboard.css"/>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-brand"><span>GJIMT MBA AI LMS</span><small>Semester 1 · 2026</small></div>
+  <div class="topbar-right">
+    <span class="topbar-user" id="topbarUser">Loading...</span>
+    <button class="btn-logout" onclick="logout()">Logout</button>
+  </div>
+</div>
+
+<main class="dash-wrap">
+  <section class="welcome-banner">
+    <div>
+      <h2>Welcome, <span id="studentName">Student</span></h2>
+      <p>MBA with AI Integration · Shadow Projects + GSDC Prep</p>
+    </div>
+    <div class="welcome-stats">
+      <div class="stat-item"><div class="val" id="statProjects">0/4</div><div class="lbl">Projects Done</div></div>
+      <div class="stat-item"><div class="val" id="statModules">0/11</div><div class="lbl">Modules Done</div></div>
+      <div class="stat-item"><div class="val" id="statMocks">0/11</div><div class="lbl">Mocks Done</div></div>
+      <div class="stat-item"><div class="val" id="statAvgScore">—</div><div class="lbl">Avg Mock Score</div></div>
+    </div>
+  </section>
+
+  <section class="card mb-16">
+    <div class="flex-between mb-8">
+      <span class="fw-700">Overall Progress</span>
+      <span class="text-sm text-muted" id="overallPct">0% complete</span>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="overallBar" style="width:0%"></div>
+    </div>
+  </section>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="tabProjects">📁 Projects</button>
+    <button class="tab-btn" data-tab="tabGSDC">📚 GSDC Modules</button>
+    <button class="tab-btn" data-tab="tabMocks">📝 Mock Tests</button>
+  </div>
+
+  <div class="tab-panel active" id="tabProjects">
+    <div class="section-title">Shadow Projects (28 Hours)</div>
+    <div class="grid-2" id="projectsGrid"><div class="spinner"></div></div>
+  </div>
+
+  <div class="tab-panel" id="tabGSDC">
+    <div class="section-title">GSDC Certification Modules (11 Modules)</div>
+    <div class="card" id="modulesList"><div class="spinner"></div></div>
+  </div>
+
+  <div class="tab-panel" id="tabMocks">
+    <div class="section-title">Saturday Mock Tests (11 Tests · 40 MCQs · 90 Min · 65% Pass)</div>
+    <div class="card" id="mockList"><div class="spinner"></div></div>
+  </div>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/student-dashboard.js"></script>
+</body>
+</html>

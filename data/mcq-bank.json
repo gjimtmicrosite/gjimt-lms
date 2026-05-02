@@ -1,0 +1,11 @@
+[
+  {
+    "id": "Q001",
+    "domain": "GenAI Foundations",
+    "question": "Placeholder question 1 for GenAI Foundations. Replace with real GSDC-aligned MCQ.",
+    "options": ["Option A", "Option B", "Option C", "Option D"],
+    "answer": "Option A",
+    "difficulty": "medium",
+    "explanation": "Replace this explanation with course-aligned rationale."
+  }
+]

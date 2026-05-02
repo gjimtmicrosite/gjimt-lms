@@ -1,0 +1,28 @@
+{
+  "modules": [
+    { "id": "M01", "title": "Generative AI Foundations", "domain": "GenAI Foundations", "week": 1, "scheduledDate": "18 Aug 2026" },
+    { "id": "M02", "title": "AI in Project Planning", "domain": "Planning", "week": 2, "scheduledDate": "25 Aug 2026" },
+    { "id": "M03", "title": "Execution & Monitoring with GenAI", "domain": "Execution/Monitoring", "week": 3, "scheduledDate": "01 Sep 2026" },
+    { "id": "M04", "title": "Risk Management with GenAI", "domain": "Risk", "week": 4, "scheduledDate": "08 Sep 2026" },
+    { "id": "M05", "title": "Resource Management & GenAI", "domain": "Resources", "week": 5, "scheduledDate": "15 Sep 2026" },
+    { "id": "M06", "title": "Automation in Project Management", "domain": "Automation", "week": 6, "scheduledDate": "22 Sep 2026" },
+    { "id": "M07", "title": "Quality Management with GenAI", "domain": "Quality", "week": 7, "scheduledDate": "29 Sep 2026" },
+    { "id": "M08", "title": "Ethics & Responsible AI in PM", "domain": "Ethics", "week": 8, "scheduledDate": "06 Oct 2026" },
+    { "id": "M09", "title": "PMBOK Integration with GenAI", "domain": "PMBOK/Agile", "week": 9, "scheduledDate": "13 Oct 2026" },
+    { "id": "M10", "title": "Agile & Hybrid PM with GenAI", "domain": "PMBOK/Agile", "week": 10, "scheduledDate": "20 Oct 2026" },
+    { "id": "M11", "title": "Capstone: Full GenAI PM Workflow", "domain": "All Domains", "week": 11, "scheduledDate": "27 Oct 2026" }
+  ],
+  "mockTests": [
+    { "id": "MT01", "title": "Mock Test 1 — Foundations", "domains": ["GenAI Foundations"], "questions": 40, "duration": 90, "scheduledDate": "22 Aug 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT01" },
+    { "id": "MT02", "title": "Mock Test 2 — Planning", "domains": ["Planning"], "questions": 40, "duration": 90, "scheduledDate": "29 Aug 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT02" },
+    { "id": "MT03", "title": "Mock Test 3 — Execution", "domains": ["Execution/Monitoring"], "questions": 40, "duration": 90, "scheduledDate": "05 Sep 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT03" },
+    { "id": "MT04", "title": "Mock Test 4 — Risk", "domains": ["Risk"], "questions": 40, "duration": 90, "scheduledDate": "12 Sep 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT04" },
+    { "id": "MT05", "title": "Mock Test 5 — Resources", "domains": ["Resources"], "questions": 40, "duration": 90, "scheduledDate": "19 Sep 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT05" },
+    { "id": "MT06", "title": "Mock Test 6 — Automation", "domains": ["Automation"], "questions": 40, "duration": 90, "scheduledDate": "26 Sep 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT06" },
+    { "id": "MT07", "title": "Mock Test 7 — Quality", "domains": ["Quality"], "questions": 40, "duration": 90, "scheduledDate": "03 Oct 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT07" },
+    { "id": "MT08", "title": "Mock Test 8 — Ethics", "domains": ["Ethics"], "questions": 40, "duration": 90, "scheduledDate": "10 Oct 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT08" },
+    { "id": "MT09", "title": "Mock Test 9 — PMBOK", "domains": ["PMBOK/Agile"], "questions": 40, "duration": 90, "scheduledDate": "17 Oct 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT09" },
+    { "id": "MT10", "title": "Mock Test 10 — Agile", "domains": ["PMBOK/Agile"], "questions": 40, "duration": 90, "scheduledDate": "24 Oct 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT10" },
+    { "id": "MT11", "title": "Mock Test 11 — Full Simulation", "domains": ["All Domains"], "questions": 40, "duration": 90, "scheduledDate": "31 Oct 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT11" }
+  ]
+}

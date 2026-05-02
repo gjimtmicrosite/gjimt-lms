@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Project Workspace · GJIMT MBA AI LMS</title>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/project.css"/>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-brand"><span>GJIMT MBA AI LMS</span></div>
+  <div class="topbar-right">
+    <span class="topbar-user" id="topbarUser">Loading...</span>
+    <button class="btn-logout" onclick="logout()">Logout</button>
+  </div>
+</div>
+
+<main class="project-wrap" id="projectRoot">
+  <a class="back-link" href="dashboard-student.html">← Back to Dashboard</a>
+
+  <div class="card mb-16">
+    <div class="flex-between mb-8">
+      <div>
+        <h1 id="projectTitle" style="font-size:1.25rem;font-weight:700;"></h1>
+        <p class="text-muted mt-8" id="projectSubtitle"></p>
+      </div>
+      <div id="projectStatus"></div>
+    </div>
+    <p id="projectDesc" class="mt-8 text-sm"></p>
+    <div class="tool-tags" id="toolTags"></div>
+    <div class="mt-8" id="colabWrap"></div>
+    <div id="remarksBox"></div>
+  </div>
+
+  <div class="grid-2">
+    <!-- MANUAL PHASE -->
+    <div class="card">
+      <div class="phase-header">
+        <div class="phase-icon">✏️</div>
+        <div>
+          <h2>Manual Phase — Hours 1–4</h2>
+          <p>Complete all tasks below WITHOUT using any AI tools</p>
+        </div>
+      </div>
+      <ul class="task-list" id="manualTasks"></ul>
+      <div id="manualLinkDisplay"></div>
+      <div class="submit-box" id="submitManualForm">
+        <h3>Submit Manual Work</h3>
+        <p>Upload your deliverable to Google Drive and paste the sharing link below.<br/>
+        <strong>Submission unlocks the AI Lab phase.</strong></p>
+        <input type="url" id="manualDriveLink"
+          placeholder="https://drive.google.com/file/d/..."/>
+        <button class="btn btn-primary w-full" id="submitManualBtn">
+          Submit Manual Phase →
+        </button>
+      </div>
+    </div>
+
+    <!-- AI LAB PHASE -->
+    <div class="card">
+      <div class="phase-header" style="background:#1e3a5f;">
+        <div class="phase-icon">🤖</div>
+        <div>
+          <h2>AI Lab — Hours 5–7</h2>
+          <p>Unlocks after manual submission is recorded</p>
+        </div>
+      </div>
+
+      <div id="aiLockPanel" class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <h3>AI Lab is Locked</h3>
+        <p>Submit your manual phase work above first.<br/>
+        The AI Lab unlocks automatically after your submission is recorded.</p>
+      </div>
+
+      <div id="aiOpenPanel" style="display:none;">
+        <ul class="task-list" id="aiTasks"></ul>
+        <div class="submit-box">
+          <h3>Submit AI Lab Work</h3>
+          <p id="deliverableText">Upload complete AI-augmented deliverable to Google Drive and paste the link.</p>
+          <input type="url" id="aiDriveLink"
+            placeholder="https://drive.google.com/file/d/..."/>
+          <button class="btn btn-success w-full" id="submitAiBtn">
+            Submit AI Phase — Complete Project ✓
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/project.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "P1",
+    "title": "Market Entry Snapshot",
+    "subtitle": "Netflix / Jio",
+    "weeks": "Week 1–2",
+    "totalHours": 7,
+    "description": "Analyse one city or region for product or service expansion using pricing, competitors, and customer segments.",
+    "tools": ["Google Trends", "ChatGPT", "Excel AI"],
+    "colabLink": null,
+    "deliverable": "Upload your Excel comparison table + PESTLE analysis document as a single PDF to Google Drive.",
+    "manualTasks": [
+      { "title": "Choose target city", "detail": "Pick one city (e.g. Mohali, Ludhiana, Chandigarh) and define scope." },
+      { "title": "Competitor mapping", "detail": "List 4–5 competitors by hand using secondary research only. No AI." },
+      { "title": "Customer segment sketch", "detail": "Draw 2–3 customer personas by hand using demographics and needs." },
+      { "title": "PESTLE framework", "detail": "Write 1–2 points per PESTLE factor manually in your notebook or Word." }
+    ],
+    "aiTasks": [
+      { "title": "Google Trends demand signals", "detail": "Use Google Trends to compare search interest across 3 cities for your product." },
+      { "title": "ChatGPT PESTLE refinement", "detail": "Use ChatGPT to expand and validate your manual PESTLE with current data." },
+      { "title": "Excel AI comparison table", "detail": "Build a structured competitor comparison table using Excel AI features." }
+    ]
+  },
+  {
+    "id": "P2",
+    "title": "Customer Journey Mapping",
+    "subtitle": "Zomato / Swiggy",
+    "weeks": "Week 3–4",
+    "totalHours": 7,
+    "description": "Map the end-to-end customer journey from order placement to delivery and identify 3 friction points.",
+    "tools": ["ChatGPT", "Excel AI", "Canva AI"],
+    "colabLink": null,
+    "deliverable": "Upload your complete journey map (visual) + friction point analysis table to Google Drive.",
+    "manualTasks": [
+      { "title": "Map customer touchpoints", "detail": "Draw the full order-to-delivery journey by hand: 8–10 touchpoints minimum." },
+      { "title": "Identify friction points", "detail": "Identify exactly 3 friction points from personal experience or observation. No AI." },
+      { "title": "Emotion curve", "detail": "Draw a basic customer emotion curve across the journey manually." },
+      { "title": "Insight note", "detail": "Write a 150-word manual insight note: what matters most to the customer." }
+    ],
+    "aiTasks": [
+      { "title": "ChatGPT journey framework", "detail": "Use ChatGPT to structure your journey map using a formal CX framework." },
+      { "title": "Excel AI issue-frequency table", "detail": "Build a table ranking friction points by frequency and impact using Excel AI." },
+      { "title": "Canva AI visual map", "detail": "Create a polished visual journey map using Canva AI design tools." }
+    ]
+  },
+  {
+    "id": "P3",
+    "title": "Startup Business Model Study",
+    "subtitle": "Google for Startups / Microsoft",
+    "weeks": "Week 5–6",
+    "totalHours": 7,
+    "description": "Analyse the revenue model, cost structure, and value proposition of a live or recently funded startup.",
+    "tools": ["Notion AI", "ChatGPT", "Google Colab"],
+    "colabLink": "https://colab.research.google.com/drive/PLACEHOLDER_P3",
+    "deliverable": "Upload your Business Model Canvas + scenario model output (from Colab) to Google Drive.",
+    "manualTasks": [
+      { "title": "Select a funded startup", "detail": "Choose a real Indian startup funded in 2023–2025 from Tracxn or YourStory." },
+      { "title": "Manual BMC", "detail": "Fill in all 9 blocks of the Business Model Canvas by hand using secondary research." },
+      { "title": "Revenue model breakdown", "detail": "Write out the revenue streams and estimate proportions manually." },
+      { "title": "Value proposition note", "detail": "Write 100 words: what problem does this startup solve and for whom?" }
+    ],
+    "aiTasks": [
+      { "title": "Notion AI BMC refinement", "detail": "Use Notion AI to expand and structure your Business Model Canvas." },
+      { "title": "ChatGPT viability assessment", "detail": "Prompt ChatGPT to assess the startup's viability using your BMC data." },
+      { "title": "Google Colab scenario model", "detail": "Open the Colab notebook above. Input revenue and cost assumptions to run break-even scenarios." }
+    ]
+  },
+  {
+    "id": "P4",
+    "title": "Functional Dashboard Creation",
+    "subtitle": "Microsoft / Google",
+    "weeks": "Week 7–8",
+    "totalHours": 7,
+    "description": "Build a 3–4 KPI dashboard using structured business data with Excel AI and Power BI or Looker Studio.",
+    "tools": ["Excel AI", "Power BI / Looker Studio", "Google Colab"],
+    "colabLink": "https://colab.research.google.com/drive/PLACEHOLDER_P4",
+    "deliverable": "Upload your Power BI / Looker Studio dashboard screenshot + Excel data file to Google Drive.",
+    "manualTasks": [
+      { "title": "Select 4 KPIs", "detail": "Choose 4 business KPIs (e.g. Sales, CAC, Churn Rate, Revenue Growth). Justify each." },
+      { "title": "Sketch dashboard layout", "detail": "Draw your dashboard layout by hand: which chart for which KPI and why." },
+      { "title": "Collect or fabricate data", "detail": "Create a 12-row structured dataset manually in a notebook (use realistic numbers)." },
+      { "title": "Data structure note", "detail": "Write a brief note describing your data schema and what each column means." }
+    ],
+    "aiTasks": [
+      { "title": "Excel AI data cleaning", "detail": "Import your manual data into Excel. Use AI features to clean and structure it." },
+      { "title": "Google Colab KPI computation", "detail": "Open Colab above. Run the KPI calculation script and export a cleaned CSV." },
+      { "title": "Power BI / Looker Studio dashboard", "detail": "Build a 3–4 KPI visual dashboard. Apply AI insights where available." }
+    ]
+  }
+]

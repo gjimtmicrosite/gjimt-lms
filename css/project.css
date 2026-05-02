@@ -1,0 +1,75 @@
+/* css/project.css */
+
+.project-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px;
+}
+
+/* ── Phase header ── */
+.phase-header {
+  background: linear-gradient(135deg, #0f172a, #1e3a5f);
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: -20px -24px 20px;
+}
+.phase-icon { font-size: 1.8rem; }
+.phase-header h2 { font-size: 1rem; font-weight: 700; }
+.phase-header p  { font-size: .78rem; color: #94a3b8; margin-top: 2px; }
+
+/* ── Task list ── */
+.task-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+.task-check {
+  width: 18px; height: 18px;
+  margin-top: 2px;
+  accent-color: #2563eb;
+  flex-shrink: 0;
+}
+.task-text { display: flex; flex-direction: column; gap: 2px; }
+.task-text strong { font-size: .85rem; color: #0f172a; }
+.task-text span   { font-size: .78rem; color: #64748b; }
+
+/* ── Submit box ── */
+.submit-box {
+  margin-top: 24px;
+  padding: 18px 20px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1.5px dashed #cbd5e1;
+}
+.submit-box h3 { font-size: .9rem; font-weight: 700; margin-bottom: 6px; }
+.submit-box p  { font-size: .78rem; color: #64748b; margin-bottom: 12px; line-height: 1.6; }
+.submit-box input[type="url"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: .85rem;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border .2s;
+}
+.submit-box input:focus { border-color: #2563eb; }
+
+/* ── Lock overlay ── */
+.lock-overlay {
+  text-align: center;
+  padding: 40px 24px;
+  color: #94a3b8;
+}
+.lock-icon { font-size: 2.8rem; margin-bottom: 12px; }
+.lock-overlay h3 { font-size: 1rem; font-weight: 700; color: #64748b; margin-bottom: 8px; }
+.lock-overlay p  { font-size: .82rem; line-height: 1.6; }
