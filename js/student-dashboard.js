@@ -1,168 +1,142 @@
-let studentProfile = null;
-let progressData = null;
-let projectMeta = [];
+// ── Add this inside your existing DOMContentLoaded, after loadStudentProgress() ──
+// Make sure gsdcMeta and progressDoc are already loaded (they are in the existing code)
+
+let mockResultsMap = {};
 let gsdcMeta = null;
-
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    console.log("🚀 Dashboard loading...");
-
-    studentProfile = await requireAuth("student");
-    if (!studentProfile) return;
-
-    console.log("✅ User:", studentProfile);
-
-    document.getElementById("studentName").textContent =
-      studentProfile.displayName || "Student";
-
-    document.getElementById("topbarUser").textContent =
-      `${studentProfile.displayName || "User"} · ${studentProfile.uid}`;
-
-    // ✅ LOAD DATA FILES
-    const [projRes, gsdcRes] = await Promise.all([
-      fetch("data/projects-meta.json"),
-      fetch("data/gsdc-modules.json")
-    ]);
-
-    projectMeta = await projRes.json();
-    gsdcMeta = await gsdcRes.json();
-
-    console.log("📦 Meta loaded");
-
-    // ✅ LOAD USER PROGRESS
-    progressData = await getOrSeedProgress(studentProfile.uid);
-
-    console.log("📊 Progress:", progressData);
-
-    // ✅ RENDER EVERYTHING
-    renderProjects();
-    renderGSDC();
-    renderMocks();
-    updateStats();
-
-    setupTabs();
-
-  } catch (err) {
-    console.error("🔥 Dashboard error:", err);
-  }
-});
-
-
-// ================= PROJECTS =================
-function renderProjects() {
-  const grid = document.getElementById("projectsGrid");
-  grid.innerHTML = "";
-
-  projectMeta.forEach(proj => {
-    const status = progressData.projects?.[proj.id]?.status || "not_started";
-
-    grid.innerHTML += `
-      <div class="project-card">
-        <h3>${proj.title}</h3>
-        <p>${proj.description}</p>
-        <div>${getStatusBadge(status)}</div>
-      </div>
-    `;
-  });
+async function loadMeta() {
+  const res = await fetch("data/gsdc-modules.json");
+  gsdcMeta = await res.json();
 }
+async function loadMockResults(email) {
 
+  const db = firebase.firestore();
 
-// ================= GSDC =================
-function renderGSDC() {
-  const container = document.getElementById("modulesList");
-  container.innerHTML = "";
+  const snapshot = await db.collection("mockResults")
+    .where("email", "==", email)
+    .get();
 
-  gsdcMeta.modules.forEach(mod => {
-    const status = progressData.gsdc?.[mod.id]?.status || "not_started";
+  mockResultsMap = {};
 
-    container.innerHTML += `
-      <div class="list-item">
-        <div>
-          <strong>${mod.title}</strong><br/>
-          <small>Week ${mod.week} · ${mod.scheduledDate}</small>
-        </div>
-        <div>${getStatusBadge(status)}</div>
-      </div>
-    `;
+  snapshot.forEach(doc => {
+    const data = doc.data();
+
+    if (!data.testId) return;
+
+    mockResultsMap[data.testId] = {
+      score: data.score,
+      passed: data.passed,
+      attemptedAt: data.timestamp
+    };
   });
+
+  console.log("Mock Results Map:", mockResultsMap);
+
+  // 🔥 IMPORTANT: ADD THESE TWO LINES
+  renderMocks();        // updates cards
+  updateMockStats();    // updates 0/11, avg, best
 }
+function updateMockStats() {
 
+  const values = Object.values(mockResultsMap);
 
-// ================= MOCK TESTS =================
+  const attempted = values.length;
+
+  const passed = values.filter(v => v.passed === true).length;
+
+  const scores = values
+    .filter(v => typeof v.score === "number")
+    .map(v => v.score);
+
+  const avg = scores.length
+    ? (scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(1)
+    : 0;
+
+  const best = scores.length
+    ? Math.max(...scores)
+    : 0;
+
+  document.getElementById("smAttempted").innerText = `${attempted}/11`;
+  document.getElementById("smPassed").innerText = passed;
+  document.getElementById("smAvg").innerText = scores.length ? avg : "—";
+  document.getElementById("smBest").innerText = scores.length ? best : "—";
+}
 function renderMocks() {
-  const container = document.getElementById("mockList");
-  container.innerHTML = "";
 
-  gsdcMeta.mockTests.forEach(test => {
-    const score = progressData.mockTests?.[test.id]?.score ?? null;
+  if (!gsdcMeta || !gsdcMeta.mockTests) {
+    console.warn("Meta not loaded yet");
+    return;
+  }
 
-    container.innerHTML += `
-      <div class="list-item">
-        <div>
-          <strong>${test.title}</strong><br/>
-          <small>${test.questions} Q · ${test.duration} min</small>
+  const wrap = document.getElementById("mockGrid");
+  const mockTests = gsdcMeta.mockTests;
+
+  wrap.innerHTML = mockTests.map(mt => {
+
+    const p = mockResultsMap[mt.id] || {};
+    const hasScore = typeof p.score === "number";
+    const isPassed = p.passed === true;
+
+    const domainsHtml = (mt.domains || [])
+      .map(d => `<span class="domain-tag">${d}</span>`)
+      .join("");
+
+    const topicsHtml = (mt.topics || [])
+      .map(t => `<li>${t}</li>`)
+      .join("");
+
+    return `
+      <div class="mock-card">
+
+        <div class="mock-card-header">
+          <div class="mock-card-title">${mt.title}</div>
+          <span class="mock-date-chip">${mt.scheduledDate}</span>
         </div>
-        <div>${scoreChip(score, test.questions)}</div>
+
+        <div>${domainsHtml}</div>
+
+        <div>${mt.questions} Qs · ${mt.duration} Min</div>
+
+        <div class="topics-body">
+          <ul>${topicsHtml}</ul>
+        </div>
+
+        <div>
+          ${hasScore
+            ? (isPassed ? "✅" : "❌") + " " + p.score + "/40"
+            : "Not Attempted"}
+        </div>
+
+        <div class="mock-actions">
+          <a href="${mt.formUrl}" target="_blank" class="btn-open-test">
+            ${hasScore ? "Retake →" : "Start Test →"}
+          </a>
+        </div>
+
       </div>
     `;
-  });
+  }).join("");
 }
+document.addEventListener("DOMContentLoaded", async () => {
 
+  await loadMeta();   // load JSON first
 
-// ================= STATS =================
-function updateStats() {
-  const projDone = Object.values(progressData.projects || {})
-    .filter(p => p.status === "completed").length;
+});
+/* ===========================
+   FIREBASE AUTH + LOAD DATA
+=========================== */
+firebase.auth().onAuthStateChanged(async (user) => {
 
-  const modDone = Object.values(progressData.gsdc || {})
-    .filter(m => m.status === "completed").length;
+  if (!user) return;
 
-  const mockScores = Object.values(progressData.mockTests || {})
-    .map(m => m.score)
-    .filter(s => s !== null);
+  const nameEl = document.getElementById("studentName");
+  const topbarEl = document.getElementById("topbarUser");
 
-  const mockDone = mockScores.length;
+  if (nameEl) nameEl.innerText = user.email;
+  if (topbarEl) topbarEl.innerText = user.email;
 
-  const avgScore = mockDone
-    ? Math.round(mockScores.reduce((a, b) => a + b, 0) / mockDone)
-    : "—";
+  // 🔥 VERY IMPORTANT ORDER
+  await loadMeta();               // 1. Load JSON
+  await loadMockResults(user.email); // 2. Load Firestore
 
-  document.getElementById("statProjects").textContent = `${projDone}/4`;
-  document.getElementById("statModules").textContent = `${modDone}/11`;
-  document.getElementById("statMocks").textContent = `${mockDone}/11`;
-  document.getElementById("statAvgScore").textContent = avgScore;
-
-  // overall %
-  const total = 4 + 11 + 11;
-  const done = projDone + modDone + mockDone;
-
-  const pct = Math.round((done / total) * 100);
-
-  document.getElementById("overallPct").textContent = `${pct}% complete`;
-  document.getElementById("overallBar").style.width = `${pct}%`;
-}
-
-
-// ================= TABS =================
-function setupTabs() {
-  const tabs = document.querySelectorAll(".tab-btn");
-  const panels = document.querySelectorAll(".tab-panel");
-
-  tabs.forEach(btn => {
-    btn.addEventListener("click", () => {
-      tabs.forEach(b => b.classList.remove("active"));
-      panels.forEach(p => p.classList.remove("active"));
-
-      btn.classList.add("active");
-      document.getElementById(btn.dataset.tab).classList.add("active");
-    });
-  });
-}
-
-
-// ================= LOGOUT =================
-function logout() {
-  firebase.auth().signOut().then(() => {
-    window.location.replace("index.html");
-  });
-}
+  renderMocks();                 // 3. Render
+});
