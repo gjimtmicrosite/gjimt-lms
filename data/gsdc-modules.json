@@ -1,28 +1,321 @@
 {
   "modules": [
-    { "id": "M01", "title": "Generative AI Foundations", "domain": "GenAI Foundations", "week": 1, "scheduledDate": "18 Aug 2026" },
-    { "id": "M02", "title": "AI in Project Planning", "domain": "Planning", "week": 2, "scheduledDate": "25 Aug 2026" },
-    { "id": "M03", "title": "Execution & Monitoring with GenAI", "domain": "Execution/Monitoring", "week": 3, "scheduledDate": "01 Sep 2026" },
-    { "id": "M04", "title": "Risk Management with GenAI", "domain": "Risk", "week": 4, "scheduledDate": "08 Sep 2026" },
-    { "id": "M05", "title": "Resource Management & GenAI", "domain": "Resources", "week": 5, "scheduledDate": "15 Sep 2026" },
-    { "id": "M06", "title": "Automation in Project Management", "domain": "Automation", "week": 6, "scheduledDate": "22 Sep 2026" },
-    { "id": "M07", "title": "Quality Management with GenAI", "domain": "Quality", "week": 7, "scheduledDate": "29 Sep 2026" },
-    { "id": "M08", "title": "Ethics & Responsible AI in PM", "domain": "Ethics", "week": 8, "scheduledDate": "06 Oct 2026" },
-    { "id": "M09", "title": "PMBOK Integration with GenAI", "domain": "PMBOK/Agile", "week": 9, "scheduledDate": "13 Oct 2026" },
-    { "id": "M10", "title": "Agile & Hybrid PM with GenAI", "domain": "PMBOK/Agile", "week": 10, "scheduledDate": "20 Oct 2026" },
-    { "id": "M11", "title": "Capstone: Full GenAI PM Workflow", "domain": "All Domains", "week": 11, "scheduledDate": "27 Oct 2026" }
+    {
+      "id": "M01",
+      "title": "Generative AI Foundations",
+      "domain": "GenAI Foundations",
+      "week": "Week 1",
+      "scheduledDate": "22 Aug 2026",
+      "description": "LLMs, prompting basics, GenAI vs traditional AI, tokens, hallucinations, responsible use"
+    },
+    {
+      "id": "M02",
+      "title": "AI in Project Planning",
+      "domain": "Planning",
+      "week": "Week 2",
+      "scheduledDate": "29 Aug 2026",
+      "description": "WBS generation with AI, scope definition, stakeholder mapping, AI-assisted scheduling"
+    },
+    {
+      "id": "M03",
+      "title": "AI in Execution & Monitoring",
+      "domain": "Execution & Monitoring",
+      "week": "Week 3",
+      "scheduledDate": "5 Sep 2026",
+      "description": "Progress tracking prompts, status report generation, variance analysis with AI"
+    },
+    {
+      "id": "M04",
+      "title": "AI in Risk Management",
+      "domain": "Risk",
+      "week": "Week 4",
+      "scheduledDate": "12 Sep 2026",
+      "description": "Risk identification using AI, risk register automation, scenario simulation"
+    },
+    {
+      "id": "M05",
+      "title": "AI in Resource Management",
+      "domain": "Resources",
+      "week": "Week 5",
+      "scheduledDate": "19 Sep 2026",
+      "description": "AI-assisted resource allocation, team productivity, capacity planning"
+    },
+    {
+      "id": "M06",
+      "title": "AI Automation in Projects",
+      "domain": "Automation",
+      "week": "Week 6",
+      "scheduledDate": "26 Sep 2026",
+      "description": "Workflow automation, AI agents, repetitive task elimination, tool integration"
+    },
+    {
+      "id": "M07",
+      "title": "AI in Quality Management",
+      "domain": "Quality",
+      "week": "Week 7",
+      "scheduledDate": "3 Oct 2026",
+      "description": "QA with AI, defect prediction, test case generation, review automation"
+    },
+    {
+      "id": "M08",
+      "title": "AI Ethics & Responsible Use",
+      "domain": "Ethics",
+      "week": "Week 8",
+      "scheduledDate": "10 Oct 2026",
+      "description": "Bias, transparency, data privacy, explainability, governance frameworks"
+    },
+    {
+      "id": "M09",
+      "title": "PMBOK & AI Integration",
+      "domain": "PMBOK Integration",
+      "week": "Week 9",
+      "scheduledDate": "17 Oct 2026",
+      "description": "Mapping GenAI to PMBOK knowledge areas, process group alignment"
+    },
+    {
+      "id": "M10",
+      "title": "Agile & Hybrid PM with AI",
+      "domain": "Agile/Hybrid",
+      "week": "Week 10",
+      "scheduledDate": "24 Oct 2026",
+      "description": "Scrum with AI, sprint planning prompts, backlog generation, hybrid models"
+    },
+    {
+      "id": "M11",
+      "title": "Capstone — All 9 Domains Review",
+      "domain": "All Domains",
+      "week": "Week 11",
+      "scheduledDate": "31 Oct 2026",
+      "description": "Full domain revision, exam strategy, weak-area drill, mock debrief"
+    }
   ],
   "mockTests": [
-    { "id": "MT01", "title": "Mock Test 1 — Foundations", "domains": ["GenAI Foundations"], "questions": 40, "duration": 90, "scheduledDate": "22 Aug 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT01" },
-    { "id": "MT02", "title": "Mock Test 2 — Planning", "domains": ["Planning"], "questions": 40, "duration": 90, "scheduledDate": "29 Aug 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT02" },
-    { "id": "MT03", "title": "Mock Test 3 — Execution", "domains": ["Execution/Monitoring"], "questions": 40, "duration": 90, "scheduledDate": "05 Sep 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT03" },
-    { "id": "MT04", "title": "Mock Test 4 — Risk", "domains": ["Risk"], "questions": 40, "duration": 90, "scheduledDate": "12 Sep 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT04" },
-    { "id": "MT05", "title": "Mock Test 5 — Resources", "domains": ["Resources"], "questions": 40, "duration": 90, "scheduledDate": "19 Sep 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT05" },
-    { "id": "MT06", "title": "Mock Test 6 — Automation", "domains": ["Automation"], "questions": 40, "duration": 90, "scheduledDate": "26 Sep 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT06" },
-    { "id": "MT07", "title": "Mock Test 7 — Quality", "domains": ["Quality"], "questions": 40, "duration": 90, "scheduledDate": "03 Oct 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT07" },
-    { "id": "MT08", "title": "Mock Test 8 — Ethics", "domains": ["Ethics"], "questions": 40, "duration": 90, "scheduledDate": "10 Oct 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT08" },
-    { "id": "MT09", "title": "Mock Test 9 — PMBOK", "domains": ["PMBOK/Agile"], "questions": 40, "duration": 90, "scheduledDate": "17 Oct 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT09" },
-    { "id": "MT10", "title": "Mock Test 10 — Agile", "domains": ["PMBOK/Agile"], "questions": 40, "duration": 90, "scheduledDate": "24 Oct 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT10" },
-    { "id": "MT11", "title": "Mock Test 11 — Full Simulation", "domains": ["All Domains"], "questions": 40, "duration": 90, "scheduledDate": "31 Oct 2026", "formUrl": "REPLACE_GOOGLE_FORM_URL_MT11" }
+    {
+      "id": "MT01",
+      "title": "Mock Test 1 — GenAI Foundations",
+      "domains": ["GenAI Foundations"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 29 Aug 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSc91Fm962OtmhKzpp4awkyLejlkVvLq2eC1sWEzU1lzHNZ3fA/viewform",
+      "topics": [
+        "What is Generative AI and how it differs from traditional AI",
+        "Large Language Models — architecture basics",
+        "Tokens, temperature, top-p explained",
+        "Prompt engineering: zero-shot, few-shot, chain-of-thought",
+        "Hallucinations — causes and mitigation",
+        "GenAI tools: ChatGPT, Gemini, Copilot, Claude",
+        "Responsible AI — bias, fairness, transparency",
+        "GenAI use cases in business and project management",
+        "Limitations of current GenAI systems",
+        "Ethical considerations when using GenAI at work"
+      ]
+    },
+    {
+      "id": "MT02",
+      "title": "Mock Test 2 — AI in Planning",
+      "domains": ["Planning"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 5 Sep 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLScSg5rYY2uZw6R9OTcaErUD2TixrNOH7aou2ahscYATYWrYkA/viewform",
+      "topics": [
+        "AI-assisted WBS creation",
+        "Scope definition prompts and stakeholder mapping",
+        "AI-generated project charters and kickoff documents",
+        "Risk-aware project scheduling with AI",
+        "Resource estimation using AI",
+        "Milestone tracking and Gantt chart automation",
+        "Prompt templates for planning phase deliverables",
+        "AI in requirements gathering",
+        "Dependency mapping using AI tools",
+        "Planning quality gates with AI support"
+      ]
+    },
+    {
+      "id": "MT03",
+      "title": "Mock Test 3 — Execution & Monitoring",
+      "domains": ["Execution & Monitoring"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 12 Sep 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSctNDOYBYwr_CBqcDHgpmhBIXWGFO4k2TvABGApYdT8VOCjZw/viewform",
+      "topics": [
+        "Status report generation with AI",
+        "Variance analysis prompts (schedule, cost, scope)",
+        "AI dashboards for project monitoring",
+        "Meeting minutes and action item extraction",
+        "Earned Value Management (EVM) with AI",
+        "Issue log automation and escalation detection",
+        "AI in stakeholder communication during execution",
+        "Change request analysis using AI",
+        "Burndown chart interpretation with AI",
+        "Real-time progress tracking tools and prompts"
+      ]
+    },
+    {
+      "id": "MT04",
+      "title": "Mock Test 4 — Risk Management",
+      "domains": ["Risk"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 19 Sep 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLScgc39Om5zxQQNVu4TuM3fQye08BLZgtaMyLROvIL_0MwRjcA/viewform",
+      "topics": [
+        "Risk identification using AI brainstorming prompts",
+        "Risk register automation",
+        "Qualitative and quantitative risk analysis with AI",
+        "Monte Carlo simulation concepts with AI",
+        "Risk response strategies generated by AI",
+        "AI in issue escalation prediction",
+        "Scenario planning for project risks",
+        "Risk heat maps using AI tools",
+        "Trigger condition identification with AI",
+        "Residual and secondary risk analysis"
+      ]
+    },
+    {
+      "id": "MT05",
+      "title": "Mock Test 5 — Resources & Automation",
+      "domains": ["Resources", "Automation"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 10 Oct 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeT8v4hWsUeK9usvkDLYmTb6TWRp3GzQgpeOr7FzIlWs2SB-Q/viewform",
+      "topics": [
+        "AI-assisted resource allocation and levelling",
+        "Team capacity planning using AI",
+        "Skills gap analysis with AI",
+        "Workflow automation using AI agents",
+        "Repetitive task identification for automation",
+        "AI integration with PM tools (Jira, Asana, Monday)",
+        "Prompt-based task assignment",
+        "Resource conflict resolution with AI",
+        "Automated reporting pipelines",
+        "AI bots in project communication workflows"
+      ]
+    },
+    {
+      "id": "MT06",
+      "title": "Mock Test 6 — Quality & Ethics",
+      "domains": ["Quality", "Ethics"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 17 Oct 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfgwQuYEMRjpof8UHbwxDBMxfpwL_G71OC1DcXB8X8UYMTPsw/viewform",
+      "topics": [
+        "QA planning with AI prompts",
+        "Defect prediction and test case generation",
+        "AI in code review and document review",
+        "Quality metrics dashboard creation",
+        "Bias in AI outputs — detection and correction",
+        "Data privacy in AI-assisted projects",
+        "Explainability and transparency in AI decisions",
+        "Responsible AI frameworks (EU AI Act, UNESCO)",
+        "AI governance in organisations",
+        "Ethical prompt design and output validation"
+      ]
+    },
+    {
+      "id": "MT07",
+      "title": "Mock Test 7 — PMBOK & Agile",
+      "domains": ["PMBOK Integration", "Agile/Hybrid"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 24 Oct 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfb_i8MlOJ_rcl2Aho4_afz0BQg-qyYXlF_7fEWa-Z3LqM0eA/viewform",
+      "topics": [
+        "Mapping GenAI to PMBOK 7th edition principles",
+        "GenAI in PMBOK knowledge areas",
+        "AI in Agile ceremonies — sprint planning, retrospectives",
+        "Backlog generation and grooming with AI",
+        "User story writing with AI prompts",
+        "Hybrid project management and AI integration",
+        "Velocity prediction using AI",
+        "Scrum master AI tools and use cases",
+        "Kanban optimisation with AI",
+        "AI for distributed and remote agile teams"
+      ]
+    },
+    {
+      "id": "MT08",
+      "title": "Mock Test 8 — Full Domain Mix",
+      "domains": ["All 9 Domains"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 7 Nov 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdI7CBbkXIez3p6SPCccEtQ34uXK3rhE-5DaZNmBQ-967_NCw/viewform",
+      "topics": [
+        "Mixed questions from all 9 GSDC domains",
+        "Application-level scenarios combining multiple domains",
+        "Case study style questions",
+        "Prompt selection best practice across domains",
+        "Tool identification by use case",
+        "Risk + Ethics combined scenarios",
+        "Planning + Execution workflow questions",
+        "Agile + PMBOK integration scenarios",
+        "Quality + Automation combined questions",
+        "Final exam simulation format"
+      ]
+    },
+    {
+      "id": "MT09",
+      "title": "Mock Test 9 — Exam Simulation 1",
+      "domains": ["All 9 Domains"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 7 Nov 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLScIviQp13Slgij-fCM5hpQ3iX8DTXv-k2qWLpjKutkpji2E0g/viewform",
+      "topics": [
+        "Full GSDC December exam simulation — Set 1",
+        "Timed 90-minute format",
+        "Difficulty: 40% easy, 40% medium, 20% hard",
+        "All 9 domains covered proportionally",
+        "Exam conditions — no hints"
+      ]
+    },
+    {
+      "id": "MT10",
+      "title": "Mock Test 10 — Exam Simulation 2",
+      "domains": ["All 9 Domains"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 14 Nov 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfFUxnZdUsD-hSFPvyfDFigr5Vt76W1eWl4uhpjVglZRDAv6g/viewform",
+      "topics": [
+        "Full GSDC December exam simulation — Set 2",
+        "Different question set from MT09",
+        "Focus on commonly misunderstood concepts",
+        "All 9 domains covered",
+        "Exam conditions — no aids"
+      ]
+    },
+    {
+      "id": "MT11",
+      "title": "Mock Test 11 — Final Exam Simulation",
+      "domains": ["All 9 Domains"],
+      "questions": 40,
+      "duration": 90,
+      "passMark": 26,
+      "scheduledDate": "Sat 14 Nov 2026",
+      "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSevLn5C2K2_-tZbTLOSqIbLvg0kU4jzW7W4li3SZHMjPc1gsA/viewform",
+      "topics": [
+        "Final pre-exam simulation — Set 3",
+        "Hardest questions bank",
+        "Gap analysis focus — personalised weak areas",
+        "Full debrief session with faculty after test",
+        "GSDC December exam registration confirmation"
+      ]
+    }
   ]
 }
