@@ -11,6 +11,9 @@ async function loadMockResults(email) {
 
   const db = firebase.firestore();
 
+  // 🔥 NORMALIZE EMAIL (VERY IMPORTANT)
+  email = email.trim().toLowerCase();
+
   const snapshot = await db.collection("mockResults")
     .where("email", "==", email)
     .get();
@@ -22,18 +25,25 @@ async function loadMockResults(email) {
 
     if (!data.testId) return;
 
-    mockResultsMap[data.testId] = {
-      score: data.score,
-      passed: data.passed,
-      attemptedAt: data.timestamp
-    };
+    const testId = data.testId.trim();
+
+    const current = mockResultsMap[testId];
+
+    // 🔥 KEEP ONLY LATEST ATTEMPT
+    if (!current || new Date(data.timestamp) > new Date(current.attemptedAt)) {
+
+      mockResultsMap[testId] = {
+        score: Number(data.score),
+        passed: data.passed === true,
+        attemptedAt: data.timestamp
+      };
+    }
   });
 
-  console.log("Mock Results Map:", mockResultsMap);
+  console.log("✅ Cleaned Mock Results Map:", mockResultsMap);
 
-  // 🔥 IMPORTANT: ADD THESE TWO LINES
-  renderMocks();        // updates cards
-  updateMockStats();    // updates 0/11, avg, best
+  renderMocks();
+  updateMockStats();
 }
 function updateMockStats() {
 
